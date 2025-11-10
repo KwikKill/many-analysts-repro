@@ -1,0 +1,6 @@
+pandas==0.24.2
+numpy==1.16.6
+scipy==1.2.3
+matplotlib==2.2.5
+statsmodels==0.10.2
+patsy==0.5.1
