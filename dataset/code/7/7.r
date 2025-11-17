@@ -2,7 +2,7 @@ full_data<-read.table("CrowdstormingDataset.csv",sep=",",header=TRUE)
 library(DataCombine) 
 full_data<-DropNA(
     full_data,c("rater1","rater2"),
-    message=FALSE
+    #message=FALSE Removed because : Error in DropNA(full_data, c("rater1", "rater2"), message = FALSE) : unused argument (message = FALSE)
 ) 
 full_data$rater1<-as.numeric(full_data$rater1)-1 
 full_data$rater2<-as.numeric(full_data$rater2)-1 
