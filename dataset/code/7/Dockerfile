@@ -1,10 +1,5 @@
 FROM thebloodman/r-old:3.0.2
 
-# App apt dependencies
-RUN apt-get update && apt-get install -y \
-    libxt6 \
-    libxrender1
-
 # Set CRAN mirror
 RUN echo 'options(repos = c(CRAN = "https://cran.r-project.org/"))' >> /usr/local/lib/R/etc/Rprofile.site
 
@@ -91,7 +86,7 @@ RUN wget -O /tmp/DataCombine.tar.gz https://cran.r-project.org/src/contrib/Archi
     R CMD INSTALL /tmp/DataCombine.tar.gz && rm -f /tmp/DataCombine.tar.gz
 
 RUN wget -O /tmp/gamlss.dist.tar.gz https://cran.r-project.org/src/contrib/Archive/gamlss.dist/gamlss.dist_4.3-1.tar.gz && \
-    R CMD INSTALL /tmp/gamlss.dist.tar.gz && rm -f /tmp/gamlss.dist.tar.gzs
+    R CMD INSTALL /tmp/gamlss.dist.tar.gz && rm -f /tmp/gamlss.dist.tar.gz
 
 RUN wget -O /tmp/plotrix.tar.gz https://cran.r-project.org/src/contrib/Archive/plotrix/plotrix_3.5-10.tar.gz && \
     R CMD INSTALL /tmp/plotrix.tar.gz && rm -f /tmp/plotrix.tar.gz
@@ -101,6 +96,11 @@ RUN wget -O /tmp/PReMiuM.tar.gz https://cran.r-project.org/src/contrib/Archive/P
 
 RUN wget -O /tmp/Cairo.tar.gz https://cran.r-project.org/src/contrib/Archive/Cairo/Cairo_1.5-6.tar.gz && \
     R CMD INSTALL /tmp/Cairo.tar.gz && rm -f /tmp/Cairo.tar.gz
+
+# App apt dependencies
+RUN apt-get update && apt-get install -y \
+    libxt6 \
+    libxrender1
 
 # Set working directory
 WORKDIR /analysis
