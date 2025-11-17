@@ -1,7 +1,7 @@
 full_data<-read.table("CrowdstormingDataset.csv",sep=",",header=TRUE) 
 library(DataCombine) 
 full_data<-DropNA(
-    full_data,c("rater1","rater2"),
+    full_data,c("rater1","rater2")
     #message=FALSE Removed because : Error in DropNA(full_data, c("rater1", "rater2"), message = FALSE) : unused argument (message = FALSE)
 ) 
 full_data$rater1<-as.numeric(full_data$rater1)-1 
@@ -26,10 +26,20 @@ runInfoObj<-profRegr(
 dissimObj<-calcDissimilarityMatrix(runInfoObj) 
 clusObj<-calcOptimalClustering(dissimObj) 
 riskProfileObj<-calcAvgRiskAndProfile(clusObj)
-clusterOrderObj<-plotRiskProfile(
-    riskProfileObj,
-    paste("summaryPROVA.png",sep=""),
-    showRelativeRisk=TRUE
-)
+# Does not work in docker without X11
+#clusterOrderObj<-plotRiskProfile(
+#    riskProfileObj,
+#    paste("summaryPROVA.png",sep=""),
+#    showRelativeRisk=TRUE
+#)
 
+# Write plot to a file without requiring X11
+# Force PNG using Cairo instead of X11
+options(bitmapType = "cairo")
+
+clusterOrderObj <- plotRiskProfile(
+    riskProfileObj,
+    outFile = "summaryPROVA.png",
+    showRelativeRisk = TRUE
+)
 

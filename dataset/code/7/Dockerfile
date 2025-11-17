@@ -1,43 +1,9 @@
-FROM debian:wheezy
+FROM thebloodman/r-old:3.0.2
 
-# Set archive sources for Wheezy
-RUN echo "deb http://archive.debian.org/debian wheezy main contrib non-free" > /etc/apt/sources.list && \
-    echo "deb http://archive.debian.org/debian-security wheezy/updates main contrib non-free" >> /etc/apt/sources.list && \
-    echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/99no-check-valid-until
-
-# Install build dependencies
-RUN apt-get update && apt-get install -y --force-yes --no-install-recommends \
-    build-essential \
-    gfortran \
-    libreadline-dev \
-    libxt-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libcairo2-dev \
-    libbz2-dev \
-    zlib1g-dev \
-    liblzma-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev \
-    wget \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
-# Download and build R 3.0.2
-WORKDIR /tmp
-RUN wget https://cran.r-project.org/src/base/R-3/R-3.0.2.tar.gz && \
-    tar -xzf R-3.0.2.tar.gz && \
-    cd R-3.0.2 && \
-    ./configure \
-        --prefix=/usr/local \
-        --enable-R-shlib \
-        --with-blas \
-        --with-lapack \
-        --with-readline \
-        --with-x=no && \
-    make && make install && \
-    cd / && rm -rf /tmp/R-3.0.2*
+# App apt dependencies
+RUN apt-get update && apt-get install -y \
+    libxt6 \
+    libxrender1
 
 # Set CRAN mirror
 RUN echo 'options(repos = c(CRAN = "https://cran.r-project.org/"))' >> /usr/local/lib/R/etc/Rprofile.site
@@ -132,6 +98,9 @@ RUN wget -O /tmp/plotrix.tar.gz https://cran.r-project.org/src/contrib/Archive/p
 
 RUN wget -O /tmp/PReMiuM.tar.gz https://cran.r-project.org/src/contrib/Archive/PReMiuM/PReMiuM_3.0.32.tar.gz && \
     R CMD INSTALL /tmp/PReMiuM.tar.gz && rm -f /tmp/PReMiuM.tar.gz
+
+RUN wget -O /tmp/Cairo.tar.gz https://cran.r-project.org/src/contrib/Archive/Cairo/Cairo_1.5-6.tar.gz && \
+    R CMD INSTALL /tmp/Cairo.tar.gz && rm -f /tmp/Cairo.tar.gz
 
 # Set working directory
 WORKDIR /analysis
