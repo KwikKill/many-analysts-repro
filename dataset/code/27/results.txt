@@ -1,0 +1,93 @@
+variance:  0.012973352601975723
+mean:  0.012750660001123406
+QUESTION 1
+Optimization terminated successfully.
+         Current function value: 0.064567
+         Iterations 11
+                          Poisson Regression Results                          
+==============================================================================
+Dep. Variable:               redCards   No. Observations:               124468
+Model:                        Poisson   Df Residuals:                   124456
+Method:                           MLE   Df Model:                           11
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.05843
+Time:                        10:15:50   Log-Likelihood:                -8036.5
+converged:                       True   LL-Null:                       -8535.2
+Covariance Type:            nonrobust   LLR p-value:                6.988e-207
+======================================================================================
+                         coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept             -7.2560      0.677    -10.716      0.000      -8.583      -5.929
+rating                 0.9951      0.622      1.600      0.110      -0.224       2.214
+games                  0.1116      0.006     17.275      0.000       0.099       0.124
+rating:games           0.0050      0.009      0.568      0.570      -0.012       0.022
+goals                 -0.0590      0.024     -2.429      0.015      -0.107      -0.011
+rating:goals           0.0052      0.030      0.170      0.865      -0.054       0.065
+yellowCards            0.1267      0.028      4.521      0.000       0.072       0.182
+rating:yellowCards    -0.0444      0.040     -1.100      0.271      -0.123       0.035
+meanIAT                0.0724      0.022      3.245      0.001       0.029       0.116
+rating:meanIAT        -0.0275      0.021     -1.330      0.184      -0.068       0.013
+meanExp               -0.0059      0.003     -1.834      0.067      -0.012       0.000
+rating:meanExp         0.0029      0.003      0.936      0.349      -0.003       0.009
+======================================================================================
+QUESTION 2a
+len pre-drop:  124621
+len pre-drop:  124468
+Optimization terminated successfully.
+         Current function value: 0.064175
+         Iterations 12
+                          Poisson Regression Results                          
+==============================================================================
+Dep. Variable:               redCards   No. Observations:               124468
+Model:                        Poisson   Df Residuals:                   124456
+Method:                           MLE   Df Model:                           11
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.06414
+Time:                        10:15:52   Log-Likelihood:                -7987.7
+converged:                       True   LL-Null:                       -8535.2
+Covariance Type:            nonrobust   LLR p-value:                6.904e-228
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -6.7871      0.928     -7.311      0.000      -8.607      -4.968
+meanIAT                 0.0546      0.028      1.976      0.048       0.000       0.109
+rating                  0.6344      0.587      1.081      0.280      -0.516       1.785
+meanIAT:rating         -0.0126      0.017     -0.741      0.459      -0.046       0.021
+games                  -0.3160      0.079     -4.025      0.000      -0.470      -0.162
+meanIAT:games           0.0128      0.002      5.618      0.000       0.008       0.017
+goals                  -0.5746      0.287     -2.005      0.045      -1.136      -0.013
+meanIAT:goals           0.0150      0.008      1.840      0.066      -0.001       0.031
+yellowCards             0.0664      0.339      0.196      0.845      -0.598       0.731
+meanIAT:yellowCards     0.0003      0.010      0.034      0.973      -0.019       0.019
+meanExp                 0.0347      0.010      3.319      0.001       0.014       0.055
+meanIAT:meanExp        -0.0011      0.000     -3.669      0.000      -0.002      -0.001
+=======================================================================================
+QUESTION 2b
+len pre-drop:  124621
+len pre-drop:  124468
+Optimization terminated successfully.
+         Current function value: 0.064234
+         Iterations 12
+                          Poisson Regression Results                          
+==============================================================================
+Dep. Variable:               redCards   No. Observations:               124468
+Model:                        Poisson   Df Residuals:                   124456
+Method:                           MLE   Df Model:                           11
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.06328
+Time:                        10:15:53   Log-Likelihood:                -7995.1
+converged:                       True   LL-Null:                       -8535.2
+Covariance Type:            nonrobust   LLR p-value:                1.052e-224
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -7.4913      0.773     -9.689      0.000      -9.007      -5.976
+meanExp                 0.0326      0.012      2.731      0.006       0.009       0.056
+rating                  0.1741      0.107      1.628      0.104      -0.035       0.384
+meanExp:rating          0.0005      0.002      0.221      0.825      -0.004       0.005
+games                   0.0351      0.017      2.111      0.035       0.003       0.068
+meanExp:games           0.0020      0.000      5.460      0.000       0.001       0.003
+goals                  -0.1326      0.063     -2.114      0.035      -0.256      -0.010
+meanExp:goals           0.0018      0.001      1.375      0.169      -0.001       0.004
+yellowCards             0.0774      0.074      1.048      0.295      -0.067       0.222
+meanExp:yellowCards   7.07e-05      0.002      0.046      0.963      -0.003       0.003
+meanIAT                 0.0814      0.023      3.544      0.000       0.036       0.126
+meanExp:meanIAT        -0.0012      0.000     -3.551      0.000      -0.002      -0.001
+=======================================================================================
