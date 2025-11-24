@@ -1,3 +1,7 @@
+# ADDED
+require(lme4)
+# END ADDED
+
 red <- read.csv("crowdstorming.csv")
 
 tred <- na.omit(red)

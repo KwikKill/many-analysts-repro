@@ -1,0 +1,102 @@
+Loading required package: lme4
+Loading required package: lattice
+Loading required package: Matrix
+Loading required package: methods
+Warning message:
+In (function (fn, par, lower = rep.int(-Inf, n), upper = rep.int(Inf,  :
+  failure to converge in 10000 evaluations
+Loading required package: MASS
+
+arm (Version 1.8-03, built: 2015-04-03)
+
+Working directory is /analysis
+
+glmer(formula = redCards ~ as.factor(rater1) + (1 | player), 
+    data = red, family = "poisson", na.action = na.omit)
+                      coef.est coef.se
+(Intercept)           -4.71     0.05  
+as.factor(rater1)0.25  0.20     0.08  
+as.factor(rater1)0.5   0.11     0.11  
+as.factor(rater1)0.75  0.19     0.13  
+as.factor(rater1)1     0.33     0.13  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ player   (Intercept) 0.68    
+ Residual             1.00    
+---
+number of obs: 124621, groups: player, 1572
+AIC = 16912.6, DIC = 16900.6
+deviance = 16900.6 
+glmer(formula = redCards ~ rater1 + (1 | player), data = red, 
+    family = "poisson", na.action = na.omit)
+            coef.est coef.se
+(Intercept) -4.67     0.04  
+rater1       0.28     0.11  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ player   (Intercept) 0.69    
+ Residual             1.00    
+---
+number of obs: 124621, groups: player, 1572
+AIC = 16910.6, DIC = 16904.6
+deviance = 16904.6 
+Data: red
+Models:
+m1: redCards ~ rater1 + (1 | player)
+m1.a: redCards ~ as.factor(rater1) + (1 | player)
+     Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+m1    3 16911 16940 -8452.3    16905                         
+m1.a  6 16913 16971 -8450.3    16901 3.9551      3     0.2663
+glmer(formula = redCards ~ as.factor(rater2) + (1 | player), 
+    data = red, family = "poisson", na.action = na.omit)
+                      coef.est coef.se
+(Intercept)           -4.74     0.06  
+as.factor(rater2)0.25  0.20     0.08  
+as.factor(rater2)0.5   0.22     0.12  
+as.factor(rater2)0.75  0.13     0.13  
+as.factor(rater2)1     0.31     0.13  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ player   (Intercept) 0.68    
+ Residual             1.00    
+---
+number of obs: 124621, groups: player, 1572
+AIC = 16913.7, DIC = 16901.7
+deviance = 16901.7 
+glmer(formula = redCards ~ as.factor(lower) + (1 | player), data = red, 
+    family = "poisson", na.action = na.omit)
+                     coef.est coef.se
+(Intercept)          -4.73     0.05  
+as.factor(lower)0.25  0.24     0.08  
+as.factor(lower)0.5   0.06     0.12  
+as.factor(lower)0.75  0.24     0.12  
+as.factor(lower)1     0.33     0.14  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ player   (Intercept) 0.68    
+ Residual             1.00    
+---
+number of obs: 124621, groups: player, 1572
+AIC = 16908.6, DIC = 16896.6
+deviance = 16896.6 
+glmer(formula = redCards ~ as.factor(higher) + (1 | player), 
+    data = red, family = "poisson", na.action = na.omit)
+                      coef.est coef.se
+(Intercept)           -4.72     0.07  
+as.factor(higher)0.25  0.16     0.08  
+as.factor(higher)0.5   0.23     0.11  
+as.factor(higher)0.75  0.06     0.14  
+as.factor(higher)1     0.31     0.13  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ player   (Intercept) 0.69    
+ Residual             1.00    
+---
+number of obs: 124621, groups: player, 1572
+AIC = 16914.6, DIC = 16902.6
+deviance = 16902.6 
