@@ -93,3 +93,14 @@ Below are the steps to reproduce the results:
 ## Conclusion
 - Recap findings from the reproducibility and replicability sections.
 - Discuss limitations of your
+
+# Current progress :
+- 1 []
+- 3 []
+- 5 []
+- 7 [] 
+- 9 [] We are clearely missing code
+- 12 [] Need to find the "data cleaning" code somehow
+- 13 [] 
+- 25 []
+- 27 [X]

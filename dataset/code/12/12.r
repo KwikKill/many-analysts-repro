@@ -1,5 +1,9 @@
 #this is only the analysis, there is other cleaning code that is not included
 
+# ADDED
+data <- read.csv("crowdstorming.csv")
+# END ADDED
+
 library(pscl)
 
 fit.zip.4 <- zeroinfl(redCards ~ darkSkin + weight + position + games + meanIAT + meanExp , data=data)
