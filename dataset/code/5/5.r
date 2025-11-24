@@ -35,8 +35,11 @@ data.games$redCards <- redCards.games
 # exclude cases with missing values
 data.games.nona<-subset(data.games,is.na(avgrate)==F&is.na(meanIAT)==F)
 
+# MODIFIED : no need to rescale with the data provided
 # rescale skin-tone-rating to range 0,1
-data.games.nona$avgrate01 <- (data.games.nona$avgrate-1)/4
+#data.games.nona$avgrate01 <- (data.games.nona$avgrate-1)/4
+data.games.nona$avgrate01 <- data.games.nona$avgrate
+# END MODIFIED
 
 # use redcard-games only for plot of expected and observed frequencies
 data.red <- data.games.nona[data.games.nona$redCards > 0,]

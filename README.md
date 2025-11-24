@@ -95,12 +95,11 @@ Below are the steps to reproduce the results:
 - Discuss limitations of your
 
 # Current progress :
-- 1 []
-- 3 []
-- 5 []
-- 7 [] 
+- 3 [] Can't figure out this "stan" thing
+- 5 [] "Car" library has a lot of compatibility issues with other libraries
+- 7 [X] With great effort to find old libraries and needed some changes to the code to output a png 
 - 9 [] We are clearely missing code
 - 12 [] Need to find the "data cleaning" code somehow
 - 13 [] 
-- 25 []
+- 25 [X] Added missing library imports
 - 27 [X]
