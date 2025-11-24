@@ -1,0 +1,8 @@
+Loading required package: car
+Loading required package: lme4
+Loading required package: Matrix
+Loading required package: methods
+[1] 372880
+Error in chisq.test(y, p = null.probs) : 
+  'x' and 'p' must have the same number of elements
+Execution halted

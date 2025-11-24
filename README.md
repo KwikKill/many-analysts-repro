@@ -96,10 +96,11 @@ Below are the steps to reproduce the results:
 
 # Current progress :
 - 3 [] Can't figure out this "stan" thing
-- 5 [] "Car" library has a lot of compatibility issues with other libraries
+- 5 [X] "Car" library has a lot of compatibility issues with other libraries, error in the code but it runs
 - 7 [X] With great effort to find old libraries and needed some changes to the code to output a png 
 - 9 [] We are clearely missing code
 - 12 [] Need to find the "data cleaning" code somehow
-- 13 [] 
+- 13 [X] 
 - 25 [X] Added missing library imports
 - 27 [X]
+- 28 [] Running for a LOOONG time

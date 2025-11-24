@@ -45,7 +45,10 @@ data.games.nona$avgrate01 <- data.games.nona$avgrate
 data.red <- data.games.nona[data.games.nona$redCards > 0,]
 
 # save frequencies
-x <- table(as.integer(data.games.nona$avgrate))
+# MODIFIED : to match original scaling
+#x <- table(as.integer(data.games.nona$avgrate))
+x <- table(as.integer(data.games.nona$avgrate*4+1))
+# END MODIFIED
 y <- table(as.integer(data.red$avgrate))
 
 # Chi-Square test: Compare observed frequencies with expected probability
