@@ -33,6 +33,8 @@ riskProfileObj<-calcAvgRiskAndProfile(clusObj)
 #    showRelativeRisk=TRUE
 #)
 
+# ADDED
+
 # Write plot to a file without requiring X11
 # Force PNG using Cairo instead of X11
 options(bitmapType = "cairo")
@@ -40,7 +42,8 @@ require(methods)
 
 clusterOrderObj <- plotRiskProfile(
     riskProfileObj,
-    outFile = "summaryPROVA.png",
+    outFile = "output/summaryPROVA.png",
     showRelativeRisk = TRUE
 )
 
+# END ADDED
