@@ -5,9 +5,7 @@
 #Research Question 2: Are soccer referees from countries high in skintone prejudice more likely to award red cards to dark skin toned players?
 
 #Import the data
-setwd("~/Documents/StatsAnalysis/Crowdstorming")
-
-data = read.csv(file="~/Documents/StatsAnalysis/Crowdstorming/1. Crowdstorming Dataset 05.10.14.csv")
+data = read.csv(file="./Crowdstorming.csv")
 
 #looking at the data
 head(data)
@@ -24,8 +22,15 @@ by(data$redCards, data$refNum, sum)
 library(psy)
 cronbach(data[,18:19]) #alpha = .96
 
-data$rater1skincolor = ifelse(data$rater1 < 3, "light skin", ifelse(data$rater1 > 3, "dark skin", NA))
-data$rater2skincolor = ifelse(data$rater2 < 3, "light skin", ifelse(data$rater2 > 3, "dark skin", NA))
+#data$rater1skincolor = ifelse(data$rater1 < 3, "light skin", ifelse(data$rater1 > 3, "dark skin", NA))
+#data$rater2skincolor = ifelse(data$rater2 < 3, "light skin", ifelse(data$rater2 > 3, "dark skin", NA))
+
+# ADDED
+
+data$rater1skincolor = ifelse(data$rater1 <= 0.5, "light skin", ifelse(data$rater1 > 0.5, "dark skin", NA))
+data$rater2skincolor = ifelse(data$rater2 <= 0.5, "light skin", ifelse(data$rater2 > 0.5, "dark skin", NA))
+
+# END ADDED
 
 ckappa(data[,28:29])
 
@@ -40,7 +45,14 @@ hist(data$skinrating)
 
 #make it a dichotomous variable based on < or > 3 (leaving out the ones with neutral or ambiguous skin color) Raters rate all the pics - how they percieve the 4 versus 5 (or 2 versus 1) may change over ratings. Only 2 raters.
 
-data$skincolor = ifelse(data$skinrating < 3, "light skin", ifelse(data$skinrating > 3, "dark skin", NA))
+#data$skincolor = ifelse(data$skinrating < 3, "light skin", ifelse(data$skinrating > 3, "dark skin", NA))
+
+# ADDED
+
+data$skincolor = ifelse(data$skinrating <= 0.5, "light skin", ifelse(data$skinrating > 0.5, "dark skin", NA))
+
+# END ADDED
+
 summary(factor(data$skincolor))
  #By basing this on the averaged score, it keeps in all players that one rater may have given a 3 and one gave a different rating. 
 
