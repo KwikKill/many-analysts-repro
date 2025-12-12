@@ -222,7 +222,9 @@ The "Many Analysts" paradigm demonstrates how analytical choices affect results.
     - Most teams if not all were missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses but also output transformation to get the exact statistics mentioned in the original paper. The values provided in the paper was correlation values with confidence intervals but most teams outputted either plots or huge text outputs that were hard to analyze.
     - We also lacked knowledge in statistics to fully understand and transform the outputs (we are not statisticians but code writers after all).
   - **Replicability :**
-    
+    - We created a new "team 30" using LLMs to replicate the "Many Analysts" experiment.
+    - we mostly used AI-generated code to solve this analysis problem and we found statistically significant evidence that soccer players with darker skin tone are more likely to receive red cards from referees (p < 0.001, 34-36% higher incidence).
+    - This aligns with the majority of human teams in the original study, demonstrating that modern LLMs can conduct statistical analyses comparable to human researchers
 - Limitations of our work :
   - Time constraints limited the depth of our reproducibility and replicability efforts.
   - Lack of expertise in certain statistical methods hindered our ability to fully interpret and transform outputs.
