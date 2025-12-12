@@ -197,16 +197,6 @@ The "Many Analysts" paradigm demonstrates how analytical choices affect results.
     - Random Seed must align with dataset splits for consistent results.
     - Hardware constraints may limit the choice of GPU-based factors.
 
-- **Exploring Variability Factors via CLI (Bonus)**  
-   - Provide instructions to use the command-line interface (CLI) to explore variability factors and their combinations:  
-     ```bash
-     python explore_variability.py --random-seed 42 --hardware GPU --dataset-version v1.1
-     ```
-   - Describe the functionality and parameters of the CLI:
-     - `--random-seed`: Specify the random seed to use.
-     - `--hardware`: Choose between CPU or GPU.
-     - `--dataset-version`: Select the dataset version.
-
 **Output**:
 - Console: Full statistical results and findings
 - File: `team-30-analysis.png` (6-panel visualization)
