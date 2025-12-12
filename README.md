@@ -120,5 +120,10 @@ Below are the steps to reproduce the results:
 - Highlight similarities and differences, if any.
 
 ## Conclusion
-- Recap findings from the reproducibility and replicability sections.
+- Findings from the reproducibility and replicability sections :
+  - **Reproducibility :**
+    - the first challenge was to choose which team to focus on as some had incomplete or non functional code. We mostly focused on teams using R as programming language as they were the most numerous and had the most complete code. We also chose a team using python as it was a pretty straightforward code to run.
+    - We then had trouble finding the right versions of R, outdated libraries and dependencies required by the original code. Every team had different versions and setups, making it challenging to create a unified environment. We spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.0.2 and 3.3.3 to accommodate different team requirements. R packages were also hard to install as the R package manager doesn't handle older package versions well.
+    - Most teams if not all were missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses but also output transformation to get the exact statistics mentioned in the original paper. The values provided in the paper was correlation values with confidence intervals but most teams outputted either plots or huge text outputs that were hard to analyze. We also lacked knowledge in statistics to fully understand and transform the outputs.
+  - **Replicability :**
 - Discuss limitations of your work
