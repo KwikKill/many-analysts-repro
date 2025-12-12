@@ -46,4 +46,20 @@ clusterOrderObj <- plotRiskProfile(
     showRelativeRisk = TRUE
 )
 
+# predObj <- calcPredictions(
+#     runInfoObj,
+#     xModel = "Discrete",
+#     xVals = list(
+#         rater1 = 0:4,   # niveaux possibles
+#         rater2 = 0:4
+#     )
+# )
+
+# write.csv(
+#     predObj$predictions,
+#     file = "output/predictions.csv",
+#     row.names = FALSE
+# )
+
+
 # END ADDED
