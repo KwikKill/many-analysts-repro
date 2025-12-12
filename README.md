@@ -53,10 +53,10 @@ Below are the steps to reproduce the results:
   |--------------------|---------------------|--------------------------------------------|
   | 3        | Not reproducible       | We can't figure out how to use "stan"  |
   | 5        | Not reproducible       | "Car" library has a lot of compatibility issues with other libraries, there is an error in the code |
-  | 7        | Reproducible           | With great effort to find old libraries and some changes to the code we output a png |
+  | 7        | Sort of Reproducible   | With great effort to find old libraries and some changes to the code we output a png |
   | 9        | Not reproducible       | We are missing code               |
   | 12       | Not reproducible       | We are missing the "data cleaning" code |
-  | 13       | Reproducible           |                                          |
+  | 13       | Sort of Reproducible   | Too many output....                     |
   | 25       | Reproducible           | Added missing library imports             |
   | 27       | Reproducible           |                                          |
   | 28       | Not reproducible       | Running for a LOOONG time but no output  |
@@ -66,6 +66,8 @@ Below are the steps to reproduce the results:
   - We couldn't find the "1.71" correlation value mentioned in the original paper.
   - We assume the output png is correct as it seems to visually matches the value but there might be an alternative code not provided to compute the exact value.
 - 13 :
+  - The code runs successfully and produces results... but the result is 340k lines of text which is impractical to analyze.
+  - We tried to filter the output to find the relevant values but couldn't locate the specific statistics mentioned in the original paper.
 - 25 :
 - 27 :
 
