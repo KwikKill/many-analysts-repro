@@ -126,4 +126,9 @@ Below are the steps to reproduce the results:
     - We then had trouble finding the right versions of R, outdated libraries and dependencies required by the original code. Every team had different versions and setups, making it challenging to create a unified environment. We spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.0.2 and 3.3.3 to accommodate different team requirements. R packages were also hard to install as the R package manager doesn't handle older package versions well.
     - Most teams if not all were missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses but also output transformation to get the exact statistics mentioned in the original paper. The values provided in the paper was correlation values with confidence intervals but most teams outputted either plots or huge text outputs that were hard to analyze. We also lacked knowledge in statistics to fully understand and transform the outputs.
   - **Replicability :**
-- Discuss limitations of your work
+    
+- Limitations of our work :
+  - Time constraints limited the depth of our reproducibility and replicability efforts.
+  - Lack of expertise in certain statistical methods hindered our ability to fully interpret and transform outputs.
+  - Incomplete codebases from original teams made it challenging or event impossible for certain teams to achieve full reproducibility.
+  - we had a very limited exploration of variability factors due to time constraints or material limitations (we only used linux systems with CPU, no GPU, same version of R,...).
