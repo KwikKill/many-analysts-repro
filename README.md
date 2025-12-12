@@ -8,7 +8,7 @@ The many analysts study involves multiple analysts independently analyzing the s
 
 This report is structured into two main sections: Reproducibility and Replicability.
 
-**Our Contribution (Team 0)**: We used Large Language Models (LLMs) to generate a new analysis that replicates the "Many Analysts" experiment using the same dataset. This tests whether modern AI (end of 2025) can independently conduct statistical research similar to the original 29 human teams. See the [Replicability section](#replicability) for our Team 0 analysis.
+**Our Contribution (Team 30)**: We used Large Language Models (LLMs) to generate a new analysis that replicates the "Many Analysts" experiment using the same dataset. This tests whether modern AI (end of 2025) can independently conduct statistical research similar to the original 29 human teams. See the [Replicability section](#replicability) for our Team 30 analysis.
 
 ## Reproducibility
 
@@ -125,8 +125,8 @@ For most of the teams we attempted to reproduce, we were only partially successf
 
 **Comparison to Original Study**:
 - **Original 29 teams**: 20 found significant positive effects (69%), 9 found non-significant effects (31%), 0 found negative effects
-- **Team 0 (LLM)**: Finds significant positive effect, **aligning with the majority of human teams**
-- **Effect size**: Team 0's 34-36% increase is in the upper range of original findings (typical range: 10-40%)
+- **Team 30 (LLM)**: Finds significant positive effect, **aligning with the majority of human teams**
+- **Effect size**: Team 30's 34-36% increase is in the upper range of original findings (typical range: 10-40%)
 - **Methods**: Uses modern count regression (Poisson/Negative Binomial), similar to several original teams but with Python instead of R
 
 **Does This Replicate the Original Study?**
@@ -182,9 +182,9 @@ python team-30.py
 
 ### Variability Factors
 
-The "Many Analysts" paradigm demonstrates how analytical choices affect results. Our Team 0 replication shows one particular set of choices made by an LLM. Future work could explore:
+The "Many Analysts" paradigm demonstrates how analytical choices affect results. Our Team 30 replication shows one particular set of choices made by an LLM. Future work could explore:
 
-  | Variability Factor | Possible Values     | Impact on Team 0                                   |
+  | Variability Factor | Possible Values     | Impact on Team 30                                   |
   |--------------------|---------------------|----------------------------------------------------|
   | Skin Tone Threshold | 0.25, 0.5, 0.75    | We used 0.5; different cutoffs may change effect size |
   | Statistical Model   | OLS, Logistic, Poisson, NB | We used Poisson/NB; others might give different results |
