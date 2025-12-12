@@ -40,12 +40,11 @@ Below are the steps to reproduce the results:
   - Difficulty installing R packages due to the R package manager's not handling older package versions well. 
   - Missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses.
   - Compatibility issues with certain libraries, such as the "Car" library, which conflicted with other dependencies.
+  - Missing knowledge in statistical methods and how to transform code outputs into the specific statistics mentioned in the original paper.
 - To fix these issues, we:
   - Focused on teams with more complete and functional codebases, mostly arround teams using R as programming language.
   - Spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.0.2 and 3.3.3 to accommodate different team requirements.
   - Made necessary code modifications to ensure compatibility with the installed library versions.
-
--------- TODO --------
 
 ### Is the Original Study Reproducible?
 - Success or failure of reproducing the study for the selected teams :
@@ -57,19 +56,23 @@ Below are the steps to reproduce the results:
   | 9        | Not reproducible       | We are missing code               |
   | 12       | Not reproducible       | We are missing the "data cleaning" code |
   | 13       | Sort of Reproducible   | Too many output....                     |
-  | 25       | Reproducible           | Added missing library imports             |
-  | 27       | Reproducible           | Python is better than R                  |
+  | 25       | Sort of Reproducible   | Added missing library imports             |
+  | 27       | Sort of Reproducible   | Python is better than R                  |
   | 28       | Not reproducible       | Running for a LOOONG time but no output  |
--------- TODO --------
 - 7 :
   - The code outputs a png file instead of a value as written in the paper.
-  - We couldn't find the "1.71" correlation value mentioned in the original paper.
+  - We couldn't find the "1.71" correlation value mentioned in the original paper nor the [1.70, 1.72] confidence interval.
   - We assume the output png is correct as it seems to visually matches the value but there might be an alternative code not provided to compute the exact value.
+  - /!\ We lacked knowledge in statistics to fully understand the output.
 - 13 :
   - The code runs successfully and produces results... but the result is 340k lines of text which is impractical to analyze.
   - We tried to filter the output to find the relevant values but couldn't locate the specific statistics mentioned in the original paper.
 - 25 :
+  - The code run and the output seems correct. There might be a post processing step not provided to format the output as in the paper.
+  - We couldn't find the "1.42" correlation value mentioned in the original paper nor the [1.19, 1.71] confidence interval.
 - 27 :
+  - The code run and the output seems correct. There might be a post processing step not provided to format the output as in the paper.
+  - We couldn't find the "2.93" correlation value mentioned in the original paper nor the [0.11, 78.66] confidence interval.
 
 ## Replicability
 
