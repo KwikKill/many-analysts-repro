@@ -15,33 +15,37 @@ This report is structured into two main sections: Reproducibility and Replicabil
 To reproduce the results of the original study, we set up a controlled dockerized environment and used the provided data and scripts.
 Below are the steps to reproduce the results:
 
--------- TODO --------
-
 1. **Requirements**  
-   - List dependencies and their versions (e.g., Python, R, libraries, etc.).
-   - Specify any system requirements.
+   - To run the reproducibility setup, ensure you have the following installed:
+     - Docker
+   - This was test only with linux operating systems so it may not work on Windows or MacOS.
 
 2. **Setting Up the Environment**  
-   - Provide instructions for using the Dockerfile to create a reproducible environment:  
-     ```bash
-     docker build -t reproducible-project .
-     docker run -it reproducible-project
-     ```
+   - To create a reproducible environment using Docker, you can launch the code for most teams with the following commands:  
+    ```bash
+    docker build -t {name} .
+    ```
 
 3. **Reproducing Results**  
-   - Describe how to run the automated scripts or notebooks to reproduce data and analyze results:
+   - To run the analysis and reproduce the results, execute the following command in each team directory:
      ```bash
-     bash scripts/run_analysis.sh
+     docker run -it -v ../../data/CrowdstormingDataJuly1st.csv:{file_path_inside_container} {name}
      ```
-   - Mention Jupyter notebooks (if applicable):  
-     Open `notebooks/reproduce_results.ipynb` to execute the analysis step-by-step.
+     To make the run easier with volume names and file paths, you can use the provided makefile with `make` in each team directory.
 
-4. **Automation (Bonus)**  
-   - Explain the included GitHub Action that produces or analyzes data automatically.  
-    
 ### Encountered Issues and Improvements
-- Report any challenges, errors, or deviations from the original study.
-- Describe how these issues were resolved or improved, if applicable.
+- We faced several issues during the reproduction process, including:
+  - Choosing which team to focus on, as some teams had incomplete or non-functional code.
+  - Finding the right versions of R, outdated libraries, and dependencies required by the original code. Every team had different versions and setups, making it challenging to create a unified environment.
+  - Difficulty installing R packages due to the R package manager's not handling older package versions well. 
+  - Missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses.
+  - Compatibility issues with certain libraries, such as the "Car" library, which conflicted with other dependencies.
+- To fix these issues, we:
+  - Focused on teams with more complete and functional codebases, mostly arround teams using R as programming language.
+  - Spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.2.0 and 3.3.3 to accommodate different team requirements.
+  - Made necessary code modifications to ensure compatibility with the installed library versions.
+
+-------- TODO --------
 
 ### Is the Original Study Reproducible?
 - Summarize the success or failure of reproducing the study.
