@@ -7,7 +7,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy analysis script
-COPY team-0.py ./
+COPY team-30.py ./
 
 # Run the analysis
-CMD ["python", "team-0.py"]
+CMD ["python", "team-30.py"]

@@ -59,7 +59,7 @@ Below are the steps to reproduce the results:
   | 13       | Sort of Reproducible   | Too many output....                     |
   | 25       | Sort of Reproducible   | Added missing library imports             |
   | 27       | Sort of Reproducible   | Python is better than R                  |
-  | 28       | Not reproducible       | Running for a LOOONG time but no output  |
+  | 28       | Sort of Reproducible   | Running for a LOOONG time but no output  |
 - 7 :
   - The code outputs a png file instead of a value as written in the paper.
   - We couldn't find the "1.71" correlation value mentioned in the original paper nor the [1.70, 1.72] confidence interval.
@@ -77,24 +77,23 @@ Below are the steps to reproduce the results:
   - The code run and the output seems correct. There might be a post processing step not provided to format the output as in the paper.
   - We couldn't find the "2.93" correlation value mentioned in the original paper nor the [0.11, 78.66] confidence interval.
   - /!\ We lacked knowledge in statistics to fully understand and transform the output.
+- 28 :
+  - The code runs for a very long time without producing any output. We had to switch to a more powerful machine to get it to finish and it still took several hours.
+  - Once completed, we couldn't find the "1.38" correlation value mentioned in the original paper nor the [1.12, 1.71] confidence interval.
+  - /!\ We lacked knowledge in statistics to fully understand and transform the output.
+
+For most of the teams we attempted to reproduce, we were only partially successful. While we managed to run the code in several cases, we often could not extract the specific statistics reported in the original study due to missing code segments, output formats, or lack of statistical expertise and because the paper only provided the final results without detailed intermediate steps.
 
 ## Replicability
 
-### Team 0: LLM-Generated Replication Experiment
+### Team 30: LLM-Generated Replication Experiment
 
-**Replication Goal**: The original "Many Analysts" study (Silberzahn et al., 2018) had 29 independent research teams analyze the same dataset to answer one question. We replicate this experiment by adding a "30th team" - but this team is entirely AI-generated using Large Language Models (December 2025). This tests whether modern AI can independently conduct statistical research comparable to human researchers.
+**Replication Goal**: The original "Many Analysts" study (Silberzahn et al., 2018) had 29 independent research teams analyze the same dataset to answer one question. We replicate this experiment by adding a "30th team" - but because of our knowledge in stats, this team is entirely AI-generated using Large Language Models. This tests whether modern AI can independently conduct statistical research comparable to human researchers.
 
-**Research Question**: Are soccer players with dark skin tone more likely than those with light skin tone to receive red cards from referees?
-
-**Why This Is Replication, Not Reproduction**:
-- **Reproduction**: Running the exact same code/methods from original teams
-- **Replication**: Independent analysis of the same data with potentially different methods
-- Team 0 represents a *new* independent analysis (replication), not re-running existing code (reproduction)
-
-**Files**:
-- `team-0.py` - Complete Python analysis script
-- `team-0-analysis.png` - Visualizations of results
-- `TEAM-0-REPORT.md` - Detailed analysis report with full methodology and findings
+***Files**:
+- `team-30.py` - Complete Python analysis script
+- `team-30-analysis.png` - Visualizations of results
+- `TEAM-30-REPORT.md` - Detailed analysis report with full methodology and findings
 - `requirements.txt` - Python package dependencies
 
 **Methodology**:
@@ -259,7 +258,8 @@ python team-0.py
   - **Reproducibility :**
     - the first challenge was to choose which team to focus on as some had incomplete or non functional code. We mostly focused on teams using R as programming language as they were the most numerous and had the most complete code. We also chose a team using python as it was a pretty straightforward code to run.
     - We then had trouble finding the right versions of R, outdated libraries and dependencies required by the original code. Every team had different versions and setups, making it challenging to create a unified environment. We spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.0.2 and 3.3.3 to accommodate different team requirements. R packages were also hard to install as the R package manager doesn't handle older package versions well.
-    - Most teams if not all were missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses but also output transformation to get the exact statistics mentioned in the original paper. The values provided in the paper was correlation values with confidence intervals but most teams outputted either plots or huge text outputs that were hard to analyze. We also lacked knowledge in statistics to fully understand and transform the outputs.
+    - Most teams if not all were missing code segments, particularly related to data cleaning, which hindered full reproduction of some analyses but also output transformation to get the exact statistics mentioned in the original paper. The values provided in the paper was correlation values with confidence intervals but most teams outputted either plots or huge text outputs that were hard to analyze.
+    - We also lacked knowledge in statistics to fully understand and transform the outputs (we are not statisticians but code writers after all).
   - **Replicability :**
     
 - Limitations of our work :
