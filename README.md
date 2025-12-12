@@ -148,7 +148,7 @@ This demonstrates that by 2025, LLMs can conduct statistical analyses that reach
 
 However, human oversight remains essential for validating statistical choices, ensuring ethical considerations, and contextualizing findings within the broader literature.
 
-**Critical Disclaimer**: The authors of this experiment lack advanced training in statistical analysis and cannot independently verify the correctness of the model selection, assumptions, diagnostics, or interpretations. This analysis represents an exploration of LLM capabilities but should **not be considered peer-reviewed or validated**. Statistical experts should critically examine:
+**Critical Disclaimer**: As the authors of this experiment, we lack advanced training in statistical analysis and cannot independently verify the correctness of the model selection, assumptions, diagnostics, or interpretations. This analysis represents an exploration of LLM capabilities but should **not be considered peer-reviewed or validated**. Statistical experts should critically examine:
 - Model appropriateness for this data structure
 - Proper handling of clustering/repeated measures
 - Validity of diagnostics
@@ -168,19 +168,19 @@ However, human oversight remains essential for validating statistical choices, e
 make
 
 # Or manually with Docker
-docker build -t repro-0 .
-docker run -v $(pwd)/dataset/data/CrowdstormingDataJuly1st.csv:/app/dataset/data/CrowdstormingDataJuly1st.csv repro-0
+docker build -t repro-30 .
+docker run -v $(pwd)/dataset/data/CrowdstormingDataJuly1st.csv:/app/dataset/data/CrowdstormingDataJuly1st.csv repro-30
 
 # Or directly with Python
 pip install -r requirements.txt
-python team-0.py
+python team-30.py
 ```
 
 **Requirements**:
 - Docker (for reproducible containerized execution)
 - Or Python 3.x with: pandas, numpy, matplotlib, seaborn, scipy, statsmodels
 
-### Variability Factors (Future Work) (Future Work)
+### Variability Factors
 
 The "Many Analysts" paradigm demonstrates how analytical choices affect results. Our Team 0 replication shows one particular set of choices made by an LLM. Future work could explore:
 
@@ -207,51 +207,12 @@ The "Many Analysts" paradigm demonstrates how analytical choices affect results.
      - `--hardware`: Choose between CPU or GPU.
      - `--dataset-version`: Select the dataset version.
 
-
-### Running the Team 0 Replication
-
-**Instructions**:
-```bash
-# Using Make (recommended)
-make
-
-# Or with Docker manually
-docker build -t repro-0 .
-docker run -v $(pwd)/dataset/data/CrowdstormingDataJuly1st.csv:/app/dataset/data/CrowdstormingDataJuly1st.csv repro-0
-
-# Or with Python directly
-pip install -r requirements.txt
-python team-0.py
-```
-
 **Output**:
 - Console: Full statistical results and findings
-- File: `team-0-analysis.png` (6-panel visualization)
-- Documentation: `TEAM-0-REPORT.md` (detailed analysis)
+- File: `team-30-analysis.png` (6-panel visualization)
+- Documentation: `TEAM-30-REPORT.md` (detailed analysis)
 
 **Interpretation**: See the comparison to original study findings above.
-
-### Does Team 0 Confirm the Original Study?
-
-**✓ YES** - Our LLM-generated replication confirms the original "Many Analysts" findings:
-
-**Similarities**:
-1. **Same conclusion**: Significant positive association between skin tone and red cards
-2. **Similar magnitude**: 34-36% effect size within the range found by human teams
-3. **Statistical significance**: p < 0.001, comparable to the 20 teams that found significance
-4. **Methodological approach**: Count regression models, similar to several original teams
-5. **Acknowledged limitations**: Observational data, potential confounders, causation concerns
-
-**Differences**:
-1. **Programming language**: Python (vs. mostly R in original study)
-2. **Model choice**: Poisson/Negative Binomial emphasized (vs. varied approaches in original)
-3. **Control variables**: Minimal controls (only games played) vs. some teams used many controls
-4. **Generation method**: AI-generated vs. human-conducted
-5. **Documentation style**: Very comprehensive automated documentation
-
-**Key Insight**: The fact that an LLM in 2025 independently reaches similar conclusions to the majority of human researchers in 2018 validates both:
-- The robustness of the original finding (survives different analytical approaches)
-- The capability of modern AI to conduct meaningful statistical research (with appropriate caveats)
 
 ## Conclusion
 - Findings from the reproducibility and replicability sections :
