@@ -48,14 +48,25 @@ Below are the steps to reproduce the results:
 -------- TODO --------
 
 ### Is the Original Study Reproducible?
-- Summarize the success or failure of reproducing the study.
+- Success or failure of reproducing the study for the selected teams :
+| Team | Status     | Comment                                   |
+  |--------------------|---------------------|--------------------------------------------|
+  | 3        | Not reproducible       | We can't figure out how to use "stan"  |
+  | 5        | Not reproducible       | "Car" library has a lot of compatibility issues with other libraries, there is an error in the code |
+  | 7        | Reproducible           | With great effort to find old libraries and some changes to the code we output a png |
+  | 9        | Not reproducible       | We are missing code               |
+  | 12       | Not reproducible       | We are missing the "data cleaning" code |
+  | 13       | Reproducible           |                                          |
+  | 25       | Reproducible           | Added missing library imports             |
+  | 27       | Reproducible           |                                          |
+  | 28       | Not reproducible       | Running for a LOOONG time but no output  |
+-------- TODO --------
 - Include supporting evidence, such as comparison tables, plots, or metrics.
 
 ## Replicability
 
 ### Variability Factors
-- **List of Factors**: Identify all potential sources of variability (e.g., dataset splits, random seeds, hardware).  
-  Example table:
+- **List of Factors**: Identify all potential sources of variability (e.g., dataset splits, random seeds, hardware).
   | Variability Factor | Possible Values     | Relevance                                   |
   |--------------------|---------------------|--------------------------------------------|
   | Random Seed        | [0, 42, 123]       | Impacts consistency of random processes    |
