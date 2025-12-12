@@ -312,7 +312,7 @@ def create_visualizations(df, light_df, dark_df):
     plt.tight_layout()
     
     # Save figure
-    output_file = 'team-0-analysis.png'
+    output_file = 'team-30-analysis.png'
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"\nVisualization saved as: {output_file}")
     
@@ -426,7 +426,7 @@ def main():
     print("=" * 80)
     
     # File path
-    filepath = 'dataset/data/CrowdstormingDataJuly1st.csv'
+    filepath = '/data/CrowdstormingDataJuly1st.csv'
     
     # 1. Load and clean data
     df = load_and_clean_data(filepath)
@@ -444,7 +444,7 @@ def main():
     generate_report(df, light_df, dark_df, poisson_model, nb_model)
     
     print("\nAll outputs generated successfully!")
-    print("- Visualization: team-0-analysis.png")
+    print("- Visualization: team-30-analysis.png")
 
 if __name__ == "__main__":
     main()
