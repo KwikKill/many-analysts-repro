@@ -42,7 +42,7 @@ Below are the steps to reproduce the results:
   - Compatibility issues with certain libraries, such as the "Car" library, which conflicted with other dependencies.
 - To fix these issues, we:
   - Focused on teams with more complete and functional codebases, mostly arround teams using R as programming language.
-  - Spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.2.0 and 3.3.3 to accommodate different team requirements.
+  - Spent significant time installing older versions of R and required libraries. We created some [Docker images](https://hub.docker.com/r/thebloodman/r-old) with R between versions 3.0.2 and 3.3.3 to accommodate different team requirements.
   - Made necessary code modifications to ensure compatibility with the installed library versions.
 
 -------- TODO --------
@@ -58,7 +58,7 @@ Below are the steps to reproduce the results:
   | 12       | Not reproducible       | We are missing the "data cleaning" code |
   | 13       | Sort of Reproducible   | Too many output....                     |
   | 25       | Reproducible           | Added missing library imports             |
-  | 27       | Reproducible           |                                          |
+  | 27       | Reproducible           | Python is better than R                  |
   | 28       | Not reproducible       | Running for a LOOONG time but no output  |
 -------- TODO --------
 - 7 :

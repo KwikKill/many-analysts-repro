@@ -115,6 +115,12 @@ RUN wget -O /tmp/zoo.tar.gz https://cran.r-project.org/src/contrib/Archive/zoo/z
 RUN wget -O /tmp/sandwich.tar.gz https://cran.r-project.org/src/contrib/Archive/sandwich/sandwich_2.3-2.tar.gz && \
     R CMD INSTALL /tmp/sandwich.tar.gz && rm -f /tmp/sandwich.tar.gz
 
+RUN wget -O /tmp/numderiv.tar.gz https://cran.r-project.org/src/contrib/Archive/numDeriv/numDeriv_2016.8-1.tar.gz && \
+    R CMD INSTALL /tmp/numderiv.tar.gz && rm -f /tmp/numderiv.tar.gz
+
+RUN wget -O /tmp/bbmle.tar.gz https://cran.r-project.org/src/contrib/Archive/bbmle/bbmle_1.0.18.tar.gz && \
+    R CMD INSTALL /tmp/bbmle.tar.gz && rm -f /tmp/bbmle.tar.gz
+
 # App apt dependencies
 RUN apt-get update && apt-get install -y \
     libxt6 \
