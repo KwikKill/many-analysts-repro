@@ -1,0 +1,231 @@
+[1] 2
+
+        Pearson's Chi-squared test
+
+data:  table(player_data[, c("skintone", "position")])
+X-squared = 63.4639, df = 24, p-value = 2.039e-05
+
+Warning message:
+In chisq.test(table(player_data[, c("skintone", "position")])) :
+  Chi-squared approximation may be incorrect
+
+        Pearson's Chi-squared test
+
+data:  table(na.omit(player_data[, c("skintone", "leagueCountry")]))
+Warning message:
+In chisq.test(table(na.omit(player_data[, c("skintone", "leagueCountry")]))) :
+  Chi-squared approximation may be incorrect
+X-squared = 224.3005, df = 24, p-value < 2.2e-16
+
+Loading required package: Matrix
+Loading required package: methods
+Loading required package: Rcpp
+Warning message:
+In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00215039 (tol = 0.001, component 6)
+Warning message:
+In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00134674 (tol = 0.001, component 6)
+Loading required package: stats4
+              dAIC df
+logit_glmer    0.0 10
+poisson_glmer  3.4 10
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: cbind(redCards, no_redCards) ~ skintone + position + leagueCountry +  
+    (1 | refNum) + (1 | playerShort)
+   Data: football_data
+
+     AIC      BIC   logLik deviance df.resid 
+ 14301.6  14398.2  -7140.8  14281.6   115491 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.6159 -0.1113 -0.0738 -0.0557 20.5275 
+
+Random effects:
+ Groups      Name        Variance Std.Dev.
+ refNum      (Intercept) 0.1045   0.3232  
+ playerShort (Intercept) 0.3300   0.5745  
+Number of obs: 115501, groups:  refNum, 2393; playerShort, 1433
+
+Fixed effects:
+                     Estimate Std. Error z value Pr(>|z|)    
+(Intercept)          -5.59993    0.09115  -61.44  < 2e-16 ***
+skintone              0.16263    0.05752    2.83 0.004692 ** 
+positionFront        -0.51496    0.08880   -5.80 6.68e-09 ***
+positionGoalkeeper   -0.18539    0.11447   -1.62 0.105325    
+positionMiddle       -0.49056    0.07665   -6.40 1.55e-10 ***
+leagueCountryFrance   0.25414    0.10687    2.38 0.017405 *  
+leagueCountryGermany -0.06516    0.09731   -0.67 0.503142    
+leagueCountrySpain    0.33530    0.09447    3.55 0.000386 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) skintn pstnFr pstnGl pstnMd lgCntF lgCntG
+skintone    -0.430                                          
+positinFrnt -0.266 -0.119                                   
+positnGlkpr -0.300  0.101  0.237                            
+positinMddl -0.351  0.021  0.372  0.291                     
+lgCntryFrnc -0.441 -0.077  0.028  0.019 -0.004              
+lgCntryGrmn -0.582  0.127  0.002  0.014 -0.008  0.432       
+legCntrySpn -0.563  0.089  0.003  0.017 -0.029  0.454  0.520
+         (Intercept)             skintone        positionFront 
+         0.003698107          1.176595391          0.597525002 
+  positionGoalkeeper       positionMiddle  leagueCountryFrance 
+         0.830777126          0.612283869          1.289357029 
+leagueCountryGermany   leagueCountrySpain 
+         0.936921316          1.398361075 
+                           2.5 %     97.5 %
+(Intercept)          0.003093096 0.00442146
+skintone             1.051160080 1.31699894
+positionFront        0.502070999 0.71112677
+positionGoalkeeper   0.663814337 1.03973445
+positionMiddle       0.526874587 0.71153847
+leagueCountryFrance  1.045692505 1.58979962
+leagueCountryGermany 0.774230918 1.13379811
+leagueCountrySpain   1.161995502 1.68280660
+Warning message:
+In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00947852 (tol = 0.001, component 11)
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: cbind(redCards, no_redCards) ~ scale(skintone) * scale(meanExp) +  
+    position + leagueCountry + (1 | refNum) + (1 | playerShort)
+   Data: football_data
+Control: glmerControl(optCtrl = list(maxfun = 50000))
+
+     AIC      BIC   logLik deviance df.resid 
+ 14302.9  14418.8  -7139.5  14278.9   115489 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.6159 -0.1115 -0.0741 -0.0560 20.5183 
+
+Random effects:
+ Groups      Name        Variance Std.Dev.
+ refNum      (Intercept) 0.1031   0.3212  
+ playerShort (Intercept) 0.3286   0.5732  
+Number of obs: 115501, groups:  refNum, 2393; playerShort, 1433
+
+Fixed effects:
+                               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                    -5.50053    0.08270  -66.51  < 2e-16 ***
+scale(skintone)                 0.09798    0.03335    2.94  0.00330 ** 
+scale(meanExp)                  0.05864    0.04114    1.43  0.15404    
+positionFront                  -0.51150    0.08874   -5.76 8.22e-09 ***
+positionGoalkeeper             -0.17458    0.11434   -1.53  0.12678    
+positionMiddle                 -0.48411    0.07660   -6.32 2.61e-10 ***
+leagueCountryFrance             0.26036    0.10665    2.44  0.01463 *  
+leagueCountryGermany           -0.06097    0.09722   -0.63  0.53057    
+leagueCountrySpain              0.29514    0.09670    3.05  0.00227 ** 
+scale(skintone):scale(meanExp)  0.01443    0.03180    0.45  0.65009    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) scl(s) scl(E) pstnFr pstnGl pstnMd lgCntF lgCntG lgCntS
+scal(skntn) -0.083                                                        
+scal(mnExp)  0.064 -0.033                                                 
+positinFrnt -0.342 -0.116 -0.022                                          
+positnGlkpr -0.292  0.099  0.015  0.237                                   
+positinMddl -0.380  0.020  0.008  0.372  0.292                            
+lgCntryFrnc -0.510 -0.077  0.040  0.027  0.020 -0.004                     
+lgCntryGrmn -0.585  0.118  0.052  0.000  0.016 -0.007  0.433              
+legCntrySpn -0.582  0.093 -0.230  0.008  0.013 -0.030  0.432  0.493       
+scl(sk):(E) -0.001  0.143 -0.238  0.014 -0.008 -0.010 -0.004 -0.049  0.059
+                   (Intercept)                scale(skintone) 
+                   0.004084592                    1.102945903 
+                scale(meanExp)                  positionFront 
+                   1.060390984                    0.599594591 
+            positionGoalkeeper                 positionMiddle 
+                   0.839805905                    0.616243123 
+           leagueCountryFrance           leagueCountryGermany 
+                   1.297402235                    0.940849318 
+            leagueCountrySpain scale(skintone):scale(meanExp) 
+                   1.343319891                    1.014531746 
+                                     2.5 %      97.5 %
+(Intercept)                    0.003473391 0.004803345
+scale(skintone)                1.033158109 1.177447726
+scale(meanExp)                 0.978249528 1.149429676
+positionFront                  0.503872197 0.713501708
+positionGoalkeeper             0.671202750 1.050761424
+positionMiddle                 0.530339621 0.716061127
+leagueCountryFrance            1.052683435 1.599011159
+leagueCountryGermany           0.777611457 1.138354420
+leagueCountrySpain             1.111400628 1.623634434
+scale(skintone):scale(meanExp) 0.953222639 1.079784115
+Warning message:
+In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00374394 (tol = 0.001, component 11)
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: cbind(redCards, no_redCards) ~ scale(skintone) * scale(meanIAT) +  
+    position + leagueCountry + (1 | refNum) + (1 | playerShort)
+   Data: football_data
+Control: glmerControl(optCtrl = list(maxfun = 50000))
+
+     AIC      BIC   logLik deviance df.resid 
+ 14301.9  14417.8  -7139.0  14277.9   115489 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.6149 -0.1115 -0.0740 -0.0560 20.9146 
+
+Random effects:
+ Groups      Name        Variance Std.Dev.
+ refNum      (Intercept) 0.1017   0.3189  
+ playerShort (Intercept) 0.3277   0.5724  
+Number of obs: 115501, groups:  refNum, 2393; playerShort, 1433
+
+Fixed effects:
+                                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                    -5.488275   0.082942  -66.17  < 2e-16 ***
+scale(skintone)                 0.094242   0.033302    2.83  0.00466 ** 
+scale(meanIAT)                  0.083204   0.043428    1.92  0.05538 .  
+positionFront                  -0.517362   0.088741   -5.83 5.54e-09 ***
+positionGoalkeeper             -0.180437   0.114331   -1.58  0.11452    
+positionMiddle                 -0.489047   0.076587   -6.39 1.71e-10 ***
+leagueCountryFrance             0.244908   0.106535    2.30  0.02151 *  
+leagueCountryGermany           -0.073114   0.097009   -0.75  0.45104    
+leagueCountrySpain              0.277759   0.098139    2.83  0.00465 ** 
+scale(skintone):scale(meanIAT) -0.009935   0.031640   -0.31  0.75352    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) scl(s) s(IAT) pstnFr pstnGl pstnMd lgCntF lgCntG lgCntS
+scal(skntn) -0.083                                                        
+scal(mnIAT)  0.105 -0.020                                                 
+positinFrnt -0.341 -0.115 -0.024                                          
+positnGlkpr -0.289  0.100  0.009  0.237                                   
+positinMddl -0.376  0.021  0.011  0.371  0.291                            
+lgCntryFrnc -0.514 -0.076 -0.027  0.029  0.019 -0.004                     
+lgCntryGrmn -0.590  0.124 -0.031  0.003  0.014 -0.008  0.432              
+legCntrySpn -0.588  0.093 -0.295  0.010  0.013 -0.031  0.441  0.505       
+scl():(IAT) -0.017  0.128 -0.306  0.024 -0.006 -0.008  0.008 -0.010  0.100
+                   (Intercept)                scale(skintone) 
+                    0.00413497                     1.09882559 
+                scale(meanIAT)                  positionFront 
+                    1.08676352                     0.59609112 
+            positionGoalkeeper                 positionMiddle 
+                    0.83490492                     0.61321046 
+           leagueCountryFrance           leagueCountryGermany 
+                    1.27750373                     0.92949441 
+            leagueCountrySpain scale(skintone):scale(meanIAT) 
+                    1.32016831                     0.99011406 
+                                     2.5 %      97.5 %
+(Intercept)                    0.003514569 0.004864887
+scale(skintone)                1.029395643 1.172938393
+scale(meanIAT)                 0.998088837 1.183316465
+positionFront                  0.500929102 0.709331159
+positionGoalkeeper             0.667295645 1.044613778
+positionMiddle                 0.527738653 0.712525164
+leagueCountryFrance            1.036763844 1.574144189
+leagueCountryGermany           0.768551242 1.124140860
+leagueCountrySpain             1.089163559 1.600167717
+scale(skintone):scale(meanIAT) 0.930578167 1.053458905
