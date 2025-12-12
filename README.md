@@ -62,7 +62,12 @@ Below are the steps to reproduce the results:
   | 28       | Not reproducible       | Running for a LOOONG time but no output  |
 -------- TODO --------
 - 7 :
-  - 
+  - The code outputs a png file instead of a value as written in the paper.
+  - We couldn't find the "1.71" correlation value mentioned in the original paper.
+  - We assume the output png is correct as it seems to visually matches the value but there might be an alternative code not provided to compute the exact value.
+- 13 :
+- 25 :
+- 27 :
 
 ## Replicability
 
