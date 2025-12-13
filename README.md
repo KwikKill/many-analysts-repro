@@ -51,7 +51,8 @@ Below are the steps to reproduce the results:
 ### Is the Original Study Reproducible?
 - Success or failure of reproducing the study for the selected teams :
 | Team | Status     | Comment                                   |
-  |--------------------|---------------------|--------------------------------------------|  | 3        | Not reproducible       | We can't figure out how to use "stan"  |
+  |--------------------|---------------------|--------------------------------------------|
+  | 3        | Not reproducible       | We can't figure out how to use "stan"  |
   | 5        | Not reproducible       | "Car" library has a lot of compatibility issues with other libraries, there is an error in the code |
   | 7        | Reproducible           | With great effort to find old libraries and some changes to the code we output a png |
   | 9        | Not reproducible       | We are missing code               |
